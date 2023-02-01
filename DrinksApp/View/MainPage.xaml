@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DrinksApp.View.MainPage"
+             xmlns:model="clr-namespace:DrinksApp.Model"
+             xmlns:viewmodel="clr-namespace:DrinksApp.ViewModel"
+             x:DataType="viewmodel:DrinksViewModel"
+    Title="MainPage">
+
+    <RefreshView Command="{Binding GetDrinksCommand}" IsRefreshing="{Binding IsRefreshing}">
+        <ContentView>
+            <CollectionView ItemsSource="{Binding Drinks}" SelectionMode="None">
+
+            </CollectionView>
+        </ContentView>
+    </RefreshView>
+    
+</ContentPage>
