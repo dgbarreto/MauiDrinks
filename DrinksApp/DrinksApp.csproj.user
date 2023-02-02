@@ -12,6 +12,9 @@
     <PlatformTarget>arm64</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
+    <MauiXaml Update="Resources\Styles\DrinksStyle.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="View\MainPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

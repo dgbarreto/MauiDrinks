@@ -10,7 +10,8 @@ namespace DrinksApp.Services {
     public class DrinkService {
         HttpClient httpClient;
         List<Drink> drinksList;
-        const string REQUEST_URL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita";
+        //const string REQUEST_URL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita";
+        const string REQUEST_URL = "https://gist.githubusercontent.com/dgbarreto/b04b167bc3eb58925c14ee55c69a7746/raw/9769d0a77014bd82c8eb060984e5dbed824712da/drinks.json";
 
         public DrinkService() { 
             httpClient = new HttpClient();

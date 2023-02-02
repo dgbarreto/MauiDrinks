@@ -7,12 +7,26 @@
              x:DataType="viewmodel:DrinksViewModel"
     Title="MainPage">
 
-    <RefreshView Command="{Binding GetDrinksCommand}" IsRefreshing="{Binding IsRefreshing}">
-        <ContentView>
-            <CollectionView ItemsSource="{Binding Drinks}" SelectionMode="None">
-
-            </CollectionView>
-        </ContentView>
-    </RefreshView>
-    
+    <VerticalStackLayout>
+        <Label>0.2</Label>
+        <RefreshView Command="{Binding GetDrinksCommand}" IsRefreshing="{Binding IsRefreshing}">
+            <ContentView>
+                <CollectionView ItemsSource="{Binding Drinks}" SelectionMode="None">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="model:Drink">
+                            <Frame HeightRequest="125" Margin="10" Padding="0">
+                                <Grid ColumnDefinitions="125,*" Padding="0">
+                                    <Image Aspect="AspectFill" Source="{Binding Thumbnail}" HeightRequest="125" ></Image>
+                                    <VerticalStackLayout Grid.Column="1" Padding="10">
+                                        <Label Text="{Binding Name}" Style="{StaticResource DrinksTitle}"></Label>
+                                        <Label Text="{Binding Glass}"></Label>
+                                    </VerticalStackLayout>
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </ContentView>
+        </RefreshView>
+    </VerticalStackLayout>
 </ContentPage>

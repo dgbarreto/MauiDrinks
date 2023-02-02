@@ -1,5 +1,6 @@
 ﻿using DrinksApp.View;
 using DrinksApp.Services;
+using DrinksApp.ViewModel;
 
 namespace DrinksApp;
 
@@ -17,6 +18,7 @@ public static class MauiProgram
 			});
 
 		builder.Services.AddSingleton<DrinkService>();
+		builder.Services.AddSingleton<DrinksViewModel>();
 		builder.Services.AddSingleton<MainPage>();
 
 		return builder.Build();
